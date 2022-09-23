@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+:root {
+  --background-color: #1c1e21;
+  --white: #ffffff;
+}
+
+body {
+  background: var(--background-color);
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  margin: 0;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: #f213a4;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+input {
+  background-color: #2c2f33;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  color: var(--white);
+}
