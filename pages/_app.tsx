@@ -12,7 +12,6 @@ const MyApp = ({
       authConfig={{
         authUrl: "/api/auth",
         domain: "example.org",
-        loginRedirect: "/create",
       }}
     >
       <Component {...pageProps} />

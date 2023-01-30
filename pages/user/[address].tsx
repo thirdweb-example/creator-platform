@@ -56,17 +56,17 @@ const Address: NextPage<IAddressProps> = ({ user }) => {
 
   return (
     <div className={styles.container}>
-      <div className={editing && styles.form}>
+      <div className={editing ? styles.form : ""}>
         {editing ? (
           <input
-            value={avatar}
+            value={avatar as string}
             onChange={(e) => setAvatar(e.target.value)}
             placeholder="Avatar"
           />
         ) : (
           <img
             className={styles.avatar}
-            src={user.avatar.length > 0 ? user.avatar : "/avatar.svg"}
+            src={user?.avatar ? user.avatar : "/avatar.svg"}
             alt={user.name}
           />
         )}
@@ -98,19 +98,33 @@ const Address: NextPage<IAddressProps> = ({ user }) => {
           {shortenAddress(user.address)}
         </a>
 
-        <div className={editing && styles.userButtons}>
+        <div className={editing ? styles.userButtons : ""}>
           {owner && editing && (
             <button onClick={() => setEditing(false)}>Cancel</button>
           )}
 
           {owner && (
-            <button onClick={handleEditClick}>
+            <button
+              onClick={handleEditClick}
+              style={{
+                marginTop: editing ? 0 : "1rem",
+              }}
+            >
               {editing ? "Save" : "Edit"}
             </button>
           )}
         </div>
 
-        {owner && <button onClick={deleteAccount}>Delete</button>}
+        {owner && (
+          <button
+            onClick={deleteAccount}
+            style={{
+              marginTop: "1rem",
+            }}
+          >
+            Delete
+          </button>
+        )}
       </div>
     </div>
   );

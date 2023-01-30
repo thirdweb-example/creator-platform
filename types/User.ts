@@ -2,7 +2,7 @@ interface User {
   id: any;
   name: string;
   bio: string;
-  avatar: string;
+  avatar: string | null;
   address: string;
 }
 
