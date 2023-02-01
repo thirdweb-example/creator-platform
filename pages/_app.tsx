@@ -11,7 +11,7 @@ const MyApp = ({
       desiredChainId={ChainId.Goerli}
       authConfig={{
         authUrl: "/api/auth",
-        domain: "example.org",
+        domain: process.env.NEXT_PUBLIC_THIRDWEB_AUTH_DOMAIN as string,
       }}
     >
       <Component {...pageProps} />
