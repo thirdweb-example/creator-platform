@@ -13,7 +13,7 @@ const Card: FC<ICardProps> = ({ user }) => {
       <div className={styles.card}>
         <img
           className={styles.avatar}
-          src={user.avatar.length > 0 ? user.avatar : "/avatar.svg"}
+          src={user?.avatar ? user.avatar : "/avatar.svg"}
           alt={user.name}
         />
         <p>{user.name}</p>

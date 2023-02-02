@@ -15,7 +15,7 @@ import Header from "../components/Header";
 
 const Create: FC = () => {
   const address = useAddress();
-  const login = useLogin();
+  const { login } = useLogin();
   const { user: thirdwebUser } = useUser();
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
@@ -25,7 +25,7 @@ const Create: FC = () => {
 
   useEffect(() => {
     if (user?.address) {
-      router.push(`/user/${thirdwebUser.address}`);
+      router.push(`/user/${user?.address}`);
     }
   }, [user]);
 

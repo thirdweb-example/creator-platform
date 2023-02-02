@@ -9,23 +9,25 @@ const Header: FC = () => {
   const address = useAddress();
   const { user: thirdwebUser } = useUser();
   const user = useQueryUser();
-  const logout = useLogout();
+  const { logout } = useLogout();
 
   return (
     <div className={styles.header}>
       <Image
         src="/thirdweb.svg"
         alt="logo"
-        width="50px"
-        height="30px"
-        objectFit="contain"
+        width={50}
+        height={30}
+        style={{
+          objectFit: "contain",
+        }}
       />
       <div>
         {user?.address ? (
           <Link href={`/user/${user?.address}`}>
             <img
               className={`${styles.avatar} ${styles.headerAvatar}`}
-              src={user?.avatar?.length > 0 ? user?.avatar : "/avatar.svg"}
+              src={user?.avatar ? user?.avatar : "/avatar.svg"}
               alt={user?.name}
             />
           </Link>
